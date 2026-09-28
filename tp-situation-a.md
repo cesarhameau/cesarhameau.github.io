@@ -46,10 +46,40 @@ J'ai perdu deux jours à suspecter le câblage alors que les compteurs d'erreurs
 
 ## Situation B:
 
-RÉCIT BRUT — À TRANSFORMER, NE PAS RECOPIER TEL QUEL
+## Contexte :
 
-Voici ce que Camille a raconté à l'oral, en vrac. À vous de le réécrire dans la trame en six blocs.
+Le bureau d'études compte 8 postes de travail haute performance. L'un d'eux, une station Dell Precision 3660 dédiée à la modélisation 3D, présentait des dysfonctionnements critiques depuis deux semaines.
 
-« Y a un poste au bureau d'études qui redémarrait tout seul, genre 3 ou 4 fois par jour, ça durait depuis une quinzaine de jours et la personne perdait son travail à chaque fois. J'ai regardé l'observateur d'événements, y avait des Kernel-Power 41. J'ai d'abord cru à Windows, j'ai fait les mises à jour, ça a rien changé. Après j'ai pensé à la RAM, j'ai lancé un memtest une nuit, 0 erreur. Du coup j'ai ouvert le poste, l'alim était pleine de poussière et le ventilateur faisait un bruit bizarre. J'ai mesuré la conso avec une prise wattmétrique, le poste tirait 310 W en pointe avec une alim de 350 W, donc limite. J'ai remplacé l'alim par une 550 W, j'ai nettoyé, et depuis plus aucun redémarrage en un mois. J'étais content parce que c'était ma première panne matérielle trouvée tout seul. Faudrait que je pense à vérifier l'alim plus tôt la prochaine fois. »
+## Problématique :
 
-Ce qu'il manque et que vous devrez inventer de façon plausible : la date, le modèle exact du matériel, et la précaution prise avant d'ouvrir le poste.
+Le poste subissait 3 à 4 redémarrages intempestifs par jour, entraînant la perte systématique des travaux en cours de l'utilisateur. L'observateur d'événements affichait des erreurs critiques récurrentes Kernel-Power 41.
+
+## Démarche :
+
+J'ai d'abord émis l'hypothèse d'un problème logiciel ou système : j'ai appliqué toutes les mises à jour Windows, mais les coupures ont persisté. J'ai ensuite suspecté la mémoire vive : j'ai exécuté un test Memtest86 durant une nuit complète, qui a révélé 0 erreur, écartant ainsi la RAM.
+
+En inspectant le boîtier, j'ai constaté un encrassement important du bloc d'alimentation et un bruit anormal du ventilateur. Une mesure à la prise wattmétrique a révélé une consommation en pointe de 310 W pour une alimentation d'origine de 350 W, soit un fonctionnement à la limite de sa capacité maximale. J'ai donc décidé de remplacer le composant.
+
+## Outils mobilisés :
+
+Prise wattmétrique monophasée
+
+Clé USB bootable Memtest86 v10.6
+
+Alimentation Corsair RM550x (550 W, certification 80 PLUS Gold)
+
+Bombes d'air sec et kit de tournevis de précision
+
+## Précautions prises :
+
+Avant toute ouverture du boîtier, j'ai éteint le poste, débranché le cordon d'alimentation secteur, puis appuyé 5 secondes sur le bouton d'allumage pour décharger les condensateurs. J'ai également utilisé un bracelet antistatique pour éviter toute décharge électrostatique sur les composantes internes.
+
+## Résultats :
+
+Le remplacement par l'alimentation de 550 W et le dépoussiérage du boîtier ont résolu le problème. En 30 jours de suivi après intervention, aucun redémarrage intempestif n'a été constaté et 100 % de la stabilité du poste a été restaurée.
+
+## Bilan personnel :
+
+J'ai perdu du temps à chercher une cause logicielle alors qu'une inspection visuelle et matérielle dès le début m'aurait orienté plus rapidement vers l'alimentation. Pour les prochains incidents de ce type, j'intégrerai systématiquement le contrôle de l'alimentation et un nettoyage matériel dans mes premières vérifications.
+
+Compétences mobilisées : gérer le patrimoine informatique ; répondre aux incidents et aux demandes d'assistance.
